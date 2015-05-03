@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <com.husnarafi.xo.BoardView
+        android:id="@+id/board"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/activity_vertical_margin" />
+
+    <RelativeLayout
+        android:id="@+id/layoutPlayerX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/player_x_highlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            android:src="@drawable/xlefthighlight" />
+
+        <ImageView
+            android:id="@+id/player_x"
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            android:layout_marginLeft="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/x_img" />
+
+        <ImageView
+            android:id="@+id/playerXDivider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/player_x"
+            android:layout_below="@+id/player_x"
+            android:layout_marginTop="3dp"
+            android:scaleType="center"
+            android:src="@drawable/xleft_lines" />
+
+        <com.husnarafi.xo.utility.TextViewWithRobotoFont
+            android:id="@+id/tv_player_name_x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/playerXDivider"
+            android:layout_below="@+id/player_x"
+            android:layout_marginTop="6.5dp"
+            android:ellipsize="marquee"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:textColor="@color/blue"
+            android:textSize="14sp" />
+
+        <com.husnarafi.xo.utility.TextViewWithRobotoFont
+            android:id="@+id/player_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/playerXDivider"
+            android:layout_below="@+id/playerXDivider"
+            android:text="10"
+            android:textColor="@color/blue"
+            android:textSize="38sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutGameTie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="50dp">
+
+        <ImageView
+            android:id="@+id/tie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            android:src="@drawable/xoox" />
+
+        <com.husnarafi.xo.utility.TextViewWithRobotoFont
+            android:id="@+id/tv_tie_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tie"
+            android:layout_centerHorizontal="true"
+            android:text="@string/score_label_tie"
+            android:textColor="@color/yellow"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tie_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_tie_text"
+            android:layout_centerHorizontal="true"
+            android:text="10"
+            android:textColor="@color/yellow"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutPlayerO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/player_o_highlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:scaleType="center"
+            android:src="@drawable/orighthighlight" />
+
+        <ImageView
+            android:id="@+id/player_o"
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/o_img" />
+
+        <ImageView
+            android:id="@+id/playerYDivider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/player_o"
+            android:layout_below="@+id/player_o"
+            android:layout_marginTop="3dp"
+            android:scaleType="center"
+            android:src="@drawable/orightlines" />
+
+        <com.husnarafi.xo.utility.TextViewWithRobotoFont
+            android:id="@+id/tv_player_name_y"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/playerYDivider"
+            android:layout_below="@+id/player_o"
+            android:layout_marginTop="6.5dp"
+            android:ellipsize="marquee"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:text="Opponent"
+            android:textColor="@color/pink"
+            android:textSize="14sp" />
+
+        <com.husnarafi.xo.utility.TextViewWithRobotoFont
+            android:id="@+id/ai_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/playerYDivider"
+            android:layout_below="@+id/playerYDivider"
+            android:text="10"
+            android:textColor="@color/pink"
+            android:textSize="38sp" />
+    </RelativeLayout>
+
+</RelativeLayout>
